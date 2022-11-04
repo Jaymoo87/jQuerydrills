@@ -2,12 +2,15 @@ $(document).ready(function () {
 
     //div in the body
     $('body').append('<div></div>')
+    //ul in the div
+    $('body').append('<ul></ul>')
 
     
     
     // reference to submit button click event added
     $('#btnSubmit').click(function (e) {
-         e.preventDefault();
+        //stops the button from going back to default (not disabled) setting
+        e.preventDefault();
         //sends and alert message with the text in the string
         alert("Don't Touch Me right THERE!");
         
@@ -15,8 +18,9 @@ $(document).ready(function () {
         alert($('#textbox').val());
         
         // creates an h2 element with the text value inside of it, h2 is inside the div
-       // $('div').append('<h2>' + $('input').val() + '</h2>');
-         
+        // $('div').append('<h2>' + $('input').val() + '</h2>');
+        $('ul').append('<li>' + $('input').val() + '</li>');
+        
         
     });
 
