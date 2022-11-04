@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //div in the body
     $('body').append('<div></div>')
 
     
@@ -13,23 +14,28 @@ $(document).ready(function () {
         // alerts the value in the text input box
         alert($('#textbox').val());
         
-        
-        $('div').append('<h2>' + $('input').val() + '</h2>');
+        // creates an h2 element with the text value inside of it, h2 is inside the div
+       // $('div').append('<h2>' + $('input').val() + '</h2>');
          
         
     });
 
     $('#textbox').keyup(function () {
 
-       
+       // changed the disabled attribute based on the value (>0) of the textbox
         if ($('#textbox').val().length > 0) {
             $('#btnSubmit').prop('disabled', false);
-            //return;
+            
         };
 
 
     });
 });
+
+
+
+
+
 //$('#textbox').on('input change', function() {
     //       if($('#textbox').val().length ==  0) {
         //          $('#btnsubmit').prop('disabled', true);
