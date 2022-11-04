@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
     //div in the body
-    $('body').append('<div></div>')
-    //ul in the div
-    $('body').append('<ul></ul>')
+    $('body').append('<div><ul></ul></div>')
+    //ul in the body
+    
 
     
     
@@ -19,10 +19,33 @@ $(document).ready(function () {
         
         // creates an h2 element with the text value inside of it, h2 is inside the div
         // $('div').append('<h2>' + $('input').val() + '</h2>');
+       
+       // appends the 'li' element into the the ul item that is inside the div
         $('ul').append('<li>' + $('input').val() + '</li>');
         
-        
-    });
+        // for h2 mouseover event in drills
+       //$('h2').mouseover(function () {
+
+
+       //click event for list element random color
+        $('li').click(function () {
+           
+        $('li').css({'color' : randomColor(), 'border-radius': '4em',})
+           // randomly picks each value for rgb colors. (16.7 million variations)
+        function randomColor() {
+           const r = [Math.floor(Math.random() * 256)];
+           const g = [Math.floor(Math.random() * 256)];
+           const b = [Math.floor(Math.random() * 256)];
+           
+           const headColor = "rgb(" + r + " , " + g + " , " + b + ")"
+           return headColor;
+           };
+       });
+       // double click removes list item, 
+       $('li').dblclick(function (){
+        $('li').remove();
+       })
+});
 
     $('#textbox').keyup(function () {
 
@@ -32,8 +55,11 @@ $(document).ready(function () {
             
         };
 
-
+        
     });
+
+
+
 });
 
 
